@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>bibtex.js</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <a href="https://github.com/brianmingus/bibtex.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
+
+    <h1>bibtex.js</h1>
+
+<div id="topcontent">
+    <div class="mandiv">This JavaScript version of BibTeX was created by converting <a href="http://en.wikipedia.org/wiki/WEB">WEB</a> to Pascal (via <a href="http://linux.die.net/man/1/tangle">tangle</a>), Pascal to C (via <a href="http://www.tug.org/web2c/">web2c</a>), C to LLVM bytecode (via <a href="http://llvm.org/">LLVM</a>), and LLVM bytecode to Javascript (via <a href="https://github.com/kripken/emscripten">emscripten</a>). It was inspired by <a href="http://manuels.github.com/texlive.js/website/">texlive.js</a>, a conversion of pdftex to JavaScript. With these two programs now running in JavaScript, most of the professional typesetting done in academia and anywhere that uses LaTeX can now be done completely from within the browser, in principle. In practice, we have more work to do, namely, systems for 1) automatic dependency resolution and 2) a JavaScript implementation of a latex/bibtex Makefile such as <a href="http://latex-mk.sourceforge.net/">LaTeX-Mk</a>. 
+<br/><br/>
+From the <a href="http://linux.die.net/man/1/bibtex">BibTeX man page</a>: <i>BibTeX reads the top-level auxiliary (.aux) file that was output during the running of latex or tex and creates a bibliography (.bbl) file that will be incorporated into the document on subsequent runs of LaTeX or TeX.
+<br/><br/>
+BibTeX looks up, in bibliographic database (.bib) files specified by the \bibliography command, the entries specified by the \cite and \nocite commands in the LaTeX or TeX source file. It formats the information from those entries according to instructions in a bibliography style (.bst) file (specified by the \bibliographystyle command), and it outputs the results to the .bbl file.</i>
+
+      <div class="btn-toolbar">
+	<div class="btn-group" id="buttons">
+          <button id="compile" class="btn btn-primary">Run BibTeX</button>
+	</div>
+      </div>
+    </div>
+
+    <div class="outputdiv" id="log">BibTeX's console output will appear here.</div>
+
+</div>
+
+<div class="editordiv">
+  <div class="auxeditordiv">
+    <h2>.aux</h2>
+    <textarea class="auxeditor" id="aux">
+\relax 
+\@writefile{lof}{\contentsline {part} {\figurenameToC }{\relax }}
+\@writefile{lot}{\contentsline {part} {\tablenameToC }{\relax }}
+\@writefile{toc}{\contentsline {part} {\chapternameToC }{\relax }}
+\citation{Kosinski2009}
+\@writefile{toc}{\contentsline {chapter}{\numberline {\th@ChapterStyle  1}\relax \fontsize  {10.95}{13.6}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \normalfont  Introduction}{1}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{introchap}{{\th@ChapterStyle  1}{1}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {\th@ChapterStyle  2}\relax \fontsize  {10.95}{13.6}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \normalfont  Methods}{6}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{methodchap}{{\th@ChapterStyle  2}{6}}
+\newlabel{dspfig}{{\th@ChapterStyle  2}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Discrete Sequence Production}}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {\th@SectionStyle  2.1}\relax \fontsize  {10.95}{13.6}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \normalfont  Pilot}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {\th@SectionStyle  2.2}\relax \fontsize  {10.95}{13.6}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \normalfont  Experiments 1 \& 2}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\th@SubSectionStyle  2.2.1}\relax \fontsize  {10.95}{13.6}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \normalfont  Experiment 1}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\th@SubSectionStyle  2.2.2}\relax \fontsize  {10.95}{13.6}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \normalfont  Experiment 2}{9}}
+\citation{Kosinski2009}
+\@writefile{toc}{\contentsline {chapter}{\numberline {\th@ChapterStyle  3}\relax \fontsize  {10.95}{13.6}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \normalfont  Results}{10}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{resultschap}{{\th@ChapterStyle  3}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {\th@SectionStyle  3.1}\relax \fontsize  {10.95}{13.6}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \normalfont  Pilot Study}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {\th@SectionStyle  3.2}\relax \fontsize  {10.95}{13.6}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \normalfont  Experiment 1}{11}}
+\newlabel{pilot0}{{\th@SectionStyle  3.1}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Pilot}}{12}}
+\citation{Kosinski2009}
+\citation{Kosinski2009}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\th@SubSectionStyle  3.2.1}\relax \fontsize  {10.95}{13.6}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \normalfont  Experiment 1: Analysis of Levels}{14}}
+\newlabel{exp1lvl1dgrm}{{\th@SubSectionStyle  3.2.1}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Condition 1}}{16}}
+\newlabel{c1d1nsmeans}{{\th@SubSectionStyle  3.2.1}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Condition 1}}{17}}
+\newlabel{c1d2nsmeans}{{\th@SubSectionStyle  3.2.1}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Condition 1}}{17}}
+\bibstyle{plain}
+\citation{*}
+\bibdata{refs}
+\@writefile{toc}{\contentsline {section}{\numberline {\th@SectionStyle  3.3}\relax \fontsize  {10.95}{13.6}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \normalfont  Experiment 2}{18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\th@SubSectionStyle  3.3.1}\relax \fontsize  {10.95}{13.6}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \normalfont  Levels Analysis}{18}}
+\@writefile{toc}{\contentsline {section}{\numberline {\th@SectionStyle  3.4}\relax \fontsize  {10.95}{13.6}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \normalfont  Experiment 3}{18}}
+\newlabel{exp2lvldgrmcond1}{{\th@SubSectionStyle  3.3.1}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Condition 1}}{19}}
+\newlabel{exp2lvldgrmcond2}{{\th@SubSectionStyle  3.3.1}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Condition 2}}{20}}
+\bibcite{baylor}{1}
+\bibcite{crow}{2}
+\bibcite{dole}{3}
+\bibcite{fabnis}{4}
+\bibcite{guillot}{5}
+\bibcite{Kosinski2009}{6}
+\bibcite{lao:thesis}{7}
+\bibcite{lao:paper}{8}
+\bibcite{lao:97}{9}
+\bibcite{mulick}{10}
+\bibcite{mulick75}{11}
+\bibcite{richards}{12}
+\bibcite{smitty}{13}
+\bibcite{taum}{14}
+\bibcite{zeddini}{15}
+\@writefile{toc}{\contentsline {part}{ \relax \fontsize  {10.95}{13.6}\selectfont  \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ \normalfont  \bfseries  Bibliography\normalfont  }{21}}
+    </textarea>
+  </div>
+  <div class="bsteditordiv">
+    <h2>.bst</h2>
+    <textarea class="bsteditor" id="bst">
+% BibTeX standard bibliography style `plain'
+% version 0.99a for BibTeX versions 0.99a or later, LaTeX version 2.09.
+% Copyright (C) 1985, all rights reserved.
+% Copying of this file is authorized only if either
+% (1) you make absolutely no changes to your copy, including name, or
+% (2) if you do make changes, you name it something other than
+% btxbst.doc, plain.bst, unsrt.bst, alpha.bst, and abbrv.bst.
+% This restriction helps ensure that all standard styles are identical.
+% The file btxbst.doc has the documentation for this style.
+
+ENTRY
+  { address
+    author
+    booktitle
+    chapter
+    edition
+    editor
+    howpublished
+    institution
+    journal
+    key
+    month
+    note
+    number
+    organization
+    pages
+    publisher
+    school
+    series
+    title
+    type
+    volume
+    year
+  }
+  {}
+  { label }
+
+INTEGERS { output.state before.all mid.sentence after.sentence after.block }
+
+FUNCTION {init.state.consts}
+{ #0 'before.all :=
+  #1 'mid.sentence :=
+  #2 'after.sentence :=
+  #3 'after.block :=
+}
+
+STRINGS { s t }
+
+FUNCTION {output.nonnull}
+{ 's :=
+  output.state mid.sentence =
+    { ", " * write$ }
+    { output.state after.block =
+{ add.period$ write$
+  newline$
+  "\newblock " write$
+}
+{ output.state before.all =
+    'write$
+    { add.period$ " " * write$ }
+  if$
+}
+      if$
+      mid.sentence 'output.state :=
+    }
+  if$
+  s
+}
+
+FUNCTION {output}
+{ duplicate$ empty$
+    'pop$
+    'output.nonnull
+  if$
+}
+
+FUNCTION {output.check}
+{ 't :=
+  duplicate$ empty$
+    { pop$ "empty " t * " in " * cite$ * warning$ }
+    'output.nonnull
+  if$
+}
+
+FUNCTION {output.bibitem}
+{ newline$
+  "\bibitem{" write$
+  cite$ write$
+  "}" write$
+  newline$
+  ""
+  before.all 'output.state :=
+}
+
+FUNCTION {fin.entry}
+{ add.period$
+  write$
+  newline$
+}
+
+FUNCTION {new.block}
+{ output.state before.all =
+    'skip$
+    { after.block 'output.state := }
+  if$
+}
+
+FUNCTION {new.sentence}
+{ output.state after.block =
+    'skip$
+    { output.state before.all =
+'skip$
+{ after.sentence 'output.state := }
+      if$
+    }
+  if$
+}
+
+FUNCTION {not}
+{   { #0 }
+    { #1 }
+  if$
+}
+
+FUNCTION {and}
+{   'skip$
+    { pop$ #0 }
+  if$
+}
+
+FUNCTION {or}
+{   { pop$ #1 }
+    'skip$
+  if$
+}
+
+FUNCTION {new.block.checka}
+{ empty$
+    'skip$
+    'new.block
+  if$
+}
+
+FUNCTION {new.block.checkb}
+{ empty$
+  swap$ empty$
+  and
+    'skip$
+    'new.block
+  if$
+}
+
+FUNCTION {new.sentence.checka}
+{ empty$
+    'skip$
+    'new.sentence
+  if$
+}
+
+FUNCTION {new.sentence.checkb}
+{ empty$
+  swap$ empty$
+  and
+    'skip$
+    'new.sentence
+  if$
+}
+
+FUNCTION {field.or.null}
+{ duplicate$ empty$
+    { pop$ "" }
+    'skip$
+  if$
+}
+
+FUNCTION {emphasize}
+{ duplicate$ empty$
+    { pop$ "" }
+    { "{\em " swap$ * "}" * }
+  if$
+}
+
+INTEGERS { nameptr namesleft numnames }
+
+FUNCTION {format.names}
+{ 's :=
+  #1 'nameptr :=
+  s num.names$ 'numnames :=
+  numnames 'namesleft :=
+    { namesleft #0 > }
+    { s nameptr "{ff~}{vv~}{ll}{, jj}" format.name$ 't :=
+      nameptr #1 >
+{ namesleft #1 >
+    { ", " * t * }
+    { numnames #2 >
+{ "," * }
+'skip$
+      if$
+      t "others" =
+{ " et~al." * }
+{ " and " * t * }
+      if$
+    }
+  if$
+}
+'t
+      if$
+      nameptr #1 + 'nameptr :=
+      namesleft #1 - 'namesleft :=
+    }
+  while$
+}
+
+FUNCTION {format.authors}
+{ author empty$
+    { "" }
+    { author format.names }
+  if$
+}
+
+FUNCTION {format.editors}
+{ editor empty$
+    { "" }
+    { editor format.names
+      editor num.names$ #1 >
+{ ", editors" * }
+{ ", editor" * }
+      if$
+    }
+  if$
+}
+
+FUNCTION {format.title}
+{ title empty$
+    { "" }
+    { title "t" change.case$ }
+  if$
+}
+
+FUNCTION {n.dashify}
+{ 't :=
+  ""
+    { t empty$ not }
+    { t #1 #1 substring$ "-" =
+{ t #1 #2 substring$ "--" = not
+    { "--" *
+      t #2 global.max$ substring$ 't :=
+    }
+    {   { t #1 #1 substring$ "-" = }
+{ "-" *
+  t #2 global.max$ substring$ 't :=
+}
+      while$
+    }
+  if$
+}
+{ t #1 #1 substring$ *
+  t #2 global.max$ substring$ 't :=
+}
+      if$
+    }
+  while$
+}
+
+FUNCTION {format.date}
+{ year empty$
+    { month empty$
+{ "" }
+{ "there's a month but no year in " cite$ * warning$
+  month
+}
+      if$
+    }
+    { month empty$
+'year
+{ month " " * year * }
+      if$
+    }
+  if$
+}
+
+FUNCTION {format.btitle}
+{ title emphasize
+}
+
+FUNCTION {tie.or.space.connect}
+{ duplicate$ text.length$ #3 <
+    { "~" }
+    { " " }
+  if$
+  swap$ * *
+}
+
+FUNCTION {either.or.check}
+{ empty$
+    'pop$
+    { "can't use both " swap$ * " fields in " * cite$ * warning$ }
+  if$
+}
+
+FUNCTION {format.bvolume}
+{ volume empty$
+    { "" }
+    { "volume" volume tie.or.space.connect
+      series empty$
+				'skip$
+				{ " of " * series emphasize * }
+      if$
+      "volume and number" number either.or.check
+    }
+  if$
+}
+
+FUNCTION {format.number.series}
+{ volume empty$
+    { number empty$
+				{ series field.or.null }
+				{ output.state mid.sentence =
+				    { "number" }
+				    { "Number" }
+				  if$
+				  number tie.or.space.connect
+				  series empty$
+				    { "there's a number but no series in " cite$ * warning$ }
+				    { " in " * series * }
+				  if$
+				}
+      if$
+    }
+    { "" }
+  if$
+}
+
+FUNCTION {format.edition}
+{ edition empty$
+    { "" }
+    { output.state mid.sentence =
+				{ edition "l" change.case$ " edition" * }
+				{ edition "t" change.case$ " edition" * }
+      if$
+    }
+  if$
+}
+
+INTEGERS { multiresult }
+
+FUNCTION {multi.page.check}
+{ 't :=
+  #0 'multiresult :=
+    { multiresult not
+      t empty$ not
+      and
+    }
+    { t #1 #1 substring$
+      duplicate$ "-" =
+      swap$ duplicate$ "," =
+      swap$ "+" =
+      or or
+				{ #1 'multiresult := }
+				{ t #2 global.max$ substring$ 't := }
+      if$
+    }
+  while$
+  multiresult
+}
+
+FUNCTION {format.pages}
+{ pages empty$
+    { "" }
+    { pages multi.page.check
+				{ "pages" pages n.dashify tie.or.space.connect }
+				{ "page" pages tie.or.space.connect }
+      if$
+    }
+  if$
+}
+
+FUNCTION {format.vol.num.pages}
+{ volume field.or.null
+  number empty$
+    'skip$
+    { "(" number * ")" * *
+      volume empty$
+				{ "there's a number but no volume in " cite$ * warning$ }
+				'skip$
+      if$
+    }
+  if$
+  pages empty$
+    'skip$
+    { duplicate$ empty$
+				{ pop$ format.pages }
+				{ ":" * pages n.dashify * }
+      if$
+    }
+  if$
+}
+
+FUNCTION {format.chapter.pages}
+{ chapter empty$
+    'format.pages
+    { type empty$
+				{ "chapter" }
+				{ type "l" change.case$ }
+      if$
+      chapter tie.or.space.connect
+      pages empty$
+				'skip$
+				{ ", " * format.pages * }
+      if$
+    }
+  if$
+}
+
+FUNCTION {format.in.ed.booktitle}
+{ booktitle empty$
+    { "" }
+    { editor empty$
+				{ "In " booktitle emphasize * }
+				{ "In " format.editors * ", " * booktitle emphasize * }
+      if$
+    }
+  if$
+}
+
+FUNCTION {empty.misc.check}
+{ author empty$ title empty$ howpublished empty$
+  month empty$ year empty$ note empty$
+  and and and and and
+  key empty$ not and
+    { "all relevant fields are empty in " cite$ * warning$ }
+    'skip$
+  if$
+}
+
+FUNCTION {format.thesis.type}
+{ type empty$
+    'skip$
+    { pop$
+      type "t" change.case$
+    }
+  if$
+}
+
+FUNCTION {format.tr.number}
+{ type empty$
+    { "Technical Report" }
+    'type
+  if$
+  number empty$
+    { "t" change.case$ }
+    { number tie.or.space.connect }
+  if$
+}
+
+FUNCTION {format.article.crossref}
+{ key empty$
+    { journal empty$
+				{ "need key or journal for " cite$ * " to crossref " * crossref *
+				  warning$
+				  ""
+				}
+				{ "In {\em " journal * "\/}" * }
+      if$
+    }
+    { "In " key * }
+  if$
+  " \cite{" * crossref * "}" *
+}
+
+FUNCTION {format.crossref.editor}
+{ editor #1 "{vv~}{ll}" format.name$
+  editor num.names$ duplicate$
+  #2 >
+    { pop$ " et~al." * }
+    { #2 <
+	    'skip$
+	    { editor #2 "{ff }{vv }{ll}{ jj}" format.name$ "others" =
+	        { " et~al." * }
+	        { " and " * editor #2 "{vv~}{ll}" format.name$ * }
+	      if$
+	    }
+      if$
+    }
+  if$
+}
+
+FUNCTION {format.book.crossref}
+{ volume empty$
+    { "empty volume in " cite$ * "'s crossref of " * crossref * warning$
+      "In "
+    }
+    { "Volume" volume tie.or.space.connect
+      " of " *
+    }
+  if$
+  editor empty$
+  editor field.or.null author field.or.null =
+  or
+    { key empty$
+	    { series empty$
+	        { "need editor, key, or series for " cite$ * " to crossref " *
+	          crossref * warning$
+	          "" *
+	        }
+	        { "{\em " * series * "\/}" * }
+	      if$
+	    }
+	    { key * }
+      if$
+    }
+    { format.crossref.editor * }
+  if$
+  " \cite{" * crossref * "}" *
+}
+
+FUNCTION {format.incoll.inproc.crossref}
+{ editor empty$
+  editor field.or.null author field.or.null =
+  or
+    { key empty$
+	    { booktitle empty$
+	        { "need editor, key, or booktitle for " cite$ * " to crossref " *
+	          crossref * warning$
+	          ""
+	        }
+	        { "In {\em " booktitle * "\/}" * }
+	      if$
+	    }
+	    { "In " key * }
+      if$
+    }
+    { "In " format.crossref.editor * }
+  if$
+  " \cite{" * crossref * "}" *
+}
+
+FUNCTION {article}
+{ output.bibitem
+  format.authors "author" output.check
+  new.block
+  format.title "title" output.check
+  new.block
+  crossref missing$
+    { journal emphasize "journal" output.check
+      format.vol.num.pages output
+      format.date "year" output.check
+    }
+    { format.article.crossref output.nonnull
+      format.pages output
+    }
+  if$
+  new.block
+  note output
+  fin.entry
+}
+
+FUNCTION {book}
+{ output.bibitem
+  author empty$
+    { format.editors "author and editor" output.check }
+    { format.authors output.nonnull
+      crossref missing$
+	    { "author and editor" editor either.or.check }
+	    'skip$
+      if$
+    }
+  if$
+  new.block
+  format.btitle "title" output.check
+  crossref missing$
+    { format.bvolume output
+      new.block
+      format.number.series output
+      new.sentence
+      publisher "publisher" output.check
+      address output
+    }
+    { new.block
+      format.book.crossref output.nonnull
+    }
+  if$
+  format.edition output
+  format.date "year" output.check
+  new.block
+  note output
+  fin.entry
+}
+
+FUNCTION {booklet}
+{ output.bibitem
+  format.authors output
+  new.block
+  format.title "title" output.check
+  howpublished address new.block.checkb
+  howpublished output
+  address output
+  format.date output
+  new.block
+  note output
+  fin.entry
+}
+
+FUNCTION {inbook}
+{ output.bibitem
+  author empty$
+    { format.editors "author and editor" output.check }
+    { format.authors output.nonnull
+      crossref missing$
+	    { "author and editor" editor either.or.check }
+	    'skip$
+      if$
+    }
+  if$
+  new.block
+  format.btitle "title" output.check
+  crossref missing$
+    { format.bvolume output
+      format.chapter.pages "chapter and pages" output.check
+      new.block
+      format.number.series output
+      new.sentence
+      publisher "publisher" output.check
+      address output
+    }
+    { format.chapter.pages "chapter and pages" output.check
+      new.block
+      format.book.crossref output.nonnull
+    }
+  if$
+  format.edition output
+  format.date "year" output.check
+  new.block
+  note output
+  fin.entry
+}
+
+FUNCTION {incollection}
+{ output.bibitem
+  format.authors "author" output.check
+  new.block
+  format.title "title" output.check
+  new.block
+  crossref missing$
+    { format.in.ed.booktitle "booktitle" output.check
+      format.bvolume output
+      format.number.series output
+      format.chapter.pages output
+      new.sentence
+      publisher "publisher" output.check
+      address output
+      format.edition output
+      format.date "year" output.check
+    }
+    { format.incoll.inproc.crossref output.nonnull
+      format.chapter.pages output
+    }
+  if$
+  new.block
+  note output
+  fin.entry
+}
+
+FUNCTION {inproceedings}
+{ output.bibitem
+  format.authors "author" output.check
+  new.block
+  format.title "title" output.check
+  new.block
+  crossref missing$
+    { format.in.ed.booktitle "booktitle" output.check
+      format.bvolume output
+      format.number.series output
+      format.pages output
+      address empty$
+	    { organization publisher new.sentence.checkb
+	      organization output
+	      publisher output
+	      format.date "year" output.check
+	    }
+	    { address output.nonnull
+	      format.date "year" output.check
+	      new.sentence
+	      organization output
+	      publisher output
+	    }
+      if$
+    }
+    { format.incoll.inproc.crossref output.nonnull
+      format.pages output
+    }
+  if$
+  new.block
+  note output
+  fin.entry
+}
+
+FUNCTION {conference} { inproceedings }
+
+FUNCTION {manual}
+{ output.bibitem
+  author empty$
+    { organization empty$
+	    'skip$
+	    { organization output.nonnull
+	      address output
+	    }
+      if$
+    }
+    { format.authors output.nonnull }
+  if$
+  new.block
+  format.btitle "title" output.check
+  author empty$
+    { organization empty$
+	    { address new.block.checka
+	      address output
+	    }
+	    'skip$
+      if$
+    }
+    { organization address new.block.checkb
+      organization output
+      address output
+    }
+  if$
+  format.edition output
+  format.date output
+  new.block
+  note output
+  fin.entry
+}
+
+FUNCTION {mastersthesis}
+{ output.bibitem
+  format.authors "author" output.check
+  new.block
+  format.title "title" output.check
+  new.block
+  "Master's thesis" format.thesis.type output.nonnull
+  school "school" output.check
+  address output
+  format.date "year" output.check
+  new.block
+  note output
+  fin.entry
+}
+
+FUNCTION {misc}
+{ output.bibitem
+  format.authors output
+  title howpublished new.block.checkb
+  format.title output
+  howpublished new.block.checka
+  howpublished output
+  format.date output
+  new.block
+  note output
+  fin.entry
+  empty.misc.check
+}
+
+FUNCTION {phdthesis}
+{ output.bibitem
+  format.authors "author" output.check
+  new.block
+  format.btitle "title" output.check
+  new.block
+  "PhD thesis" format.thesis.type output.nonnull
+  school "school" output.check
+  address output
+  format.date "year" output.check
+  new.block
+  note output
+  fin.entry
+}
+
+FUNCTION {proceedings}
+{ output.bibitem
+  editor empty$
+    { organization output }
+    { format.editors output.nonnull }
+  if$
+  new.block
+  format.btitle "title" output.check
+  format.bvolume output
+  format.number.series output
+  address empty$
+    { editor empty$
+	    { publisher new.sentence.checka }
+	    { organization publisher new.sentence.checkb
+	      organization output
+	    }
+      if$
+      publisher output
+      format.date "year" output.check
+    }
+    { address output.nonnull
+      format.date "year" output.check
+      new.sentence
+      editor empty$
+	    'skip$
+	    { organization output }
+      if$
+      publisher output
+    }
+  if$
+  new.block
+  note output
+  fin.entry
+}
+
+FUNCTION {techreport}
+{ output.bibitem
+  format.authors "author" output.check
+  new.block
+  format.title "title" output.check
+  new.block
+  format.tr.number output.nonnull
+  institution "institution" output.check
+  address output
+  format.date "year" output.check
+  new.block
+  note output
+  fin.entry
+}
+
+FUNCTION {unpublished}
+{ output.bibitem
+  format.authors "author" output.check
+  new.block
+  format.title "title" output.check
+  new.block
+  note "note" output.check
+  format.date output
+  fin.entry
+}
+
+FUNCTION {default.type} { misc }
+
+MACRO {jan} {"January"}
+
+MACRO {feb} {"February"}
+
+MACRO {mar} {"March"}
+
+MACRO {apr} {"April"}
+
+MACRO {may} {"May"}
+
+MACRO {jun} {"June"}
+
+MACRO {jul} {"July"}
+
+MACRO {aug} {"August"}
+
+MACRO {sep} {"September"}
+
+MACRO {oct} {"October"}
+
+MACRO {nov} {"November"}
+
+MACRO {dec} {"December"}
+
+MACRO {acmcs} {"ACM Computing Surveys"}
+
+MACRO {acta} {"Acta Informatica"}
+
+MACRO {cacm} {"Communications of the ACM"}
+
+MACRO {ibmjrd} {"IBM Journal of Research and Development"}
+
+MACRO {ibmsj} {"IBM Systems Journal"}
+
+MACRO {ieeese} {"IEEE Transactions on Software Engineering"}
+
+MACRO {ieeetc} {"IEEE Transactions on Computers"}
+
+MACRO {ieeetcad}
+ {"IEEE Transactions on Computer-Aided Design of Integrated Circuits"}
+
+MACRO {ipl} {"Information Processing Letters"}
+
+MACRO {jacm} {"Journal of the ACM"}
+
+MACRO {jcss} {"Journal of Computer and System Sciences"}
+
+MACRO {scp} {"Science of Computer Programming"}
+
+MACRO {sicomp} {"SIAM Journal on Computing"}
+
+MACRO {tocs} {"ACM Transactions on Computer Systems"}
+
+MACRO {tods} {"ACM Transactions on Database Systems"}
+
+MACRO {tog} {"ACM Transactions on Graphics"}
+
+MACRO {toms} {"ACM Transactions on Mathematical Software"}
+
+MACRO {toois} {"ACM Transactions on Office Information Systems"}
+
+MACRO {toplas} {"ACM Transactions on Programming Languages and Systems"}
+
+MACRO {tcs} {"Theoretical Computer Science"}
+
+READ
+
+FUNCTION {sortify}
+{ purify$
+  "l" change.case$
+}
+
+INTEGERS { len }
+
+FUNCTION {chop.word}
+{ 's :=
+  'len :=
+  s #1 len substring$ =
+    { s len #1 + global.max$ substring$ }
+    's
+  if$
+}
+
+FUNCTION {sort.format.names}
+{ 's :=
+  #1 'nameptr :=
+  ""
+  s num.names$ 'numnames :=
+  numnames 'namesleft :=
+    { namesleft #0 > }
+    { nameptr #1 >
+	  { "   " * }
+	  'skip$
+      if$
+      s nameptr "{vv{ } }{ll{ }}{  ff{ }}{  jj{ }}" format.name$ 't :=
+      nameptr numnames = t "others" = and
+	  { "et al" * }
+	  { t sortify * }
+      if$
+      nameptr #1 + 'nameptr :=
+      namesleft #1 - 'namesleft :=
+    }
+  while$
+}
+
+FUNCTION {sort.format.title}
+{ 't :=
+  "A " #2
+    "An " #3
+      "The " #4 t chop.word
+    chop.word
+  chop.word
+  sortify
+  #1 global.max$ substring$
+}
+
+FUNCTION {author.sort}
+{ author empty$
+    { key empty$
+	  { "to sort, need author or key in " cite$ * warning$
+	    ""
+	  }
+	  { key sortify }
+      if$
+    }
+    { author sort.format.names }
+  if$
+}
+
+FUNCTION {author.editor.sort}
+{ author empty$
+    { editor empty$
+	  { key empty$
+	      { "to sort, need author, editor, or key in " cite$ * warning$
+	        ""
+	      }
+	      { key sortify }
+	    if$
+	  }
+	  { editor sort.format.names }
+      if$
+    }
+    { author sort.format.names }
+  if$
+}
+
+FUNCTION {author.organization.sort}
+{ author empty$
+    { organization empty$
+	  { key empty$
+	      { "to sort, need author, organization, or key in " cite$ * warning$
+	        ""
+	      }
+	      { key sortify }
+	    if$
+	  }
+	  { "The " #4 organization chop.word sortify }
+      if$
+    }
+    { author sort.format.names }
+  if$
+}
+
+FUNCTION {editor.organization.sort}
+{ editor empty$
+    { organization empty$
+	  { key empty$
+	      { "to sort, need editor, organization, or key in " cite$ * warning$
+	        ""
+	      }
+	      { key sortify }
+	    if$
+	  }
+	  { "The " #4 organization chop.word sortify }
+      if$
+    }
+    { editor sort.format.names }
+  if$
+}
+
+FUNCTION {presort}
+{ type$ "book" =
+  type$ "inbook" =
+  or
+    'author.editor.sort
+    { type$ "proceedings" =
+	  'editor.organization.sort
+	  { type$ "manual" =
+	      'author.organization.sort
+	      'author.sort
+	    if$
+	  }
+      if$
+    }
+  if$
+  "    "
+  *
+  year field.or.null sortify
+  *
+  "    "
+  *
+  title field.or.null
+  sort.format.title
+  *
+  #1 entry.max$ substring$
+  'sort.key$ :=
+}
+
+ITERATE {presort}
+
+SORT
+
+STRINGS { longest.label }
+
+INTEGERS { number.label longest.label.width }
+
+FUNCTION {initialize.longest.label}
+{ "" 'longest.label :=
+  #1 'number.label :=
+  #0 'longest.label.width :=
+}
+
+FUNCTION {longest.label.pass}
+{ number.label int.to.str$ 'label :=
+  number.label #1 + 'number.label :=
+  label width$ longest.label.width >
+    { label 'longest.label :=
+      label width$ 'longest.label.width :=
+    }
+    'skip$
+  if$
+}
+
+EXECUTE {initialize.longest.label}
+
+ITERATE {longest.label.pass}
+
+FUNCTION {begin.bib}
+{ preamble$ empty$
+    'skip$
+    { preamble$ write$ newline$ }
+  if$
+  "\begin{thebibliography}{"  longest.label  * "}" * write$ newline$
+}
+
+EXECUTE {begin.bib}
+
+EXECUTE {init.state.consts}
+
+ITERATE {call.type$}
+
+FUNCTION {end.bib}
+{ newline$
+  "\end{thebibliography}" write$ newline$
+}
+
+EXECUTE {end.bib}
+    </textarea>
+    </div>
+
+  <div class="bsteditordiv">
+    <h2>.bib</h2>
+    <textarea class="bsteditor" id="bib">
+@ARTICLE{Kosinski2009,
+author="Robert J. Kosinski",
+title="A Literature Review on Reaction Time: http://goo.gl/lYwyY",
+year="2008",
+journal="Web"
+}
+
+@ARTICLE{BoSeidler09,
+year={2009},
+author={Bo, J and Seidler, R D},
+journal={Journal of neurophysiology},
+volume={101},
+month={Jun},
+pages={},
+url={http://www.ncbi.nlm.nih.gov/pubmed/19357338},
+title={Visuospatial working memory capacity predicts the organization of acquired explicit motor sequences.},
+}
+
+@ARTICLE{VerstynenPhillipsBraunEtAl12,
+year={2012},
+author={Verstynen, Timothy and Phillips, Jeff and Braun, Emily and Workman, Brett and Schunn, Christian and Schneider, Walter},
+journal={PloS one},
+volume={7},
+month={10},
+pages={},
+publisher={Public Library of Science},
+url={http://www.ncbi.nlm.nih.gov/pubmed/23056630},
+title={Dynamic Sensorimotor Planning during Long-Term Sequence Learning: The Role of Variability, Response Chunking and Planning Errors.},
+}
+
+
+@ARTICLE{SakaiKitaguchiHikosaka03,
+year={2003},
+author={Sakai, Katsuyuki and Kitaguchi, Katsuya and Hikosaka, Okihide},
+journal={Experimental brain research},
+volume={152},
+month={Sep},
+pages={},
+url={http://www.ncbi.nlm.nih.gov/pubmed/12879170},
+title={Chunking during human visuomotor sequence learning.},
+}
+
+@ARTICLE{PammiMiyapuramAhmedEtAl12,
+year={2012},
+author={Pammi, V S Chandrasekhar and Miyapuram, K P and Ahmed, Kazuyuki and Samejima, Raju S and Bapi, Kenji},
+journal={NeuroImage},
+volume={59},
+month={Jan},
+pages={},
+url={http://www.ncbi.nlm.nih.gov/pubmed/21867758},
+title={Changing the structure of complex visuo-motor sequences selectively activates the fronto-parietal network.},
+}
+
+@ARTICLE{KennerleySakaiRushworth04,
+year={2004},
+author={Kennerley, Steve W and Sakai, K and Rushworth, M F S},
+journal={Journal of neurophysiology},
+volume={91},
+month={Feb},
+pages={},
+url={http://www.ncbi.nlm.nih.gov/pubmed/14573560},
+title={Organization of action sequences and the role of the pre-SMA.},
+}
+
+@ARTICLE{PenhuneSteele12,
+year={2012},
+author={Penhune, Virginia B and Steele, Christopher J},
+journal={Behavioural brain research},
+volume={226},
+month={Jan},
+pages={},
+url={http://www.ncbi.nlm.nih.gov/pubmed/22004979},
+title={Parallel contributions of cerebellar, striatal and M1 mechanisms to motor sequence learning.},
+}
+
+@ARTICLE{VerweyAbrahamse12,
+number={3},
+year={2012},
+author={Verwey, Willem B. and Abrahamse, Elger L.},
+journal={Acta Psychologica},
+volume={140},
+month={Jul},
+pages={274-282},
+url={http://www.ncbi.nlm.nih.gov/pubmed/22705631},
+title={Distinct modes of executing movement sequences: Reacting, associating, and chunking.},
+}
+
+@ARTICLE{KrieteNoellBraverEtAlInPrep,
+author={Kriete, T and Noelle, D and Braver, T and Cohen, J and O'Reilly, R},
+title={Indirection and Generativity in the Prefrontal Cortex / Basal Ganglia System},
+year={In Prep},
+journal="In Prep"
+}
+
+@ARTICLE{ChekafMathyInReview,
+journal={In Review},
+author={Chekaf, M. and Mathy, F.},
+year={2012},
+title={Chunking Memory Span for Objects Varying in Number, Order and Compressibility},
+}
+
+@ARTICLE{Miller56,
+author={G A Miller and G A Miller},
+url={http://www.ncbi.nlm.nih.gov/pubmed/8022966},
+volume={101},
+pages={81-97},
+year={1994},
+title={The magical number seven, plus or minus two: some limits on our capacity for processing information. 1956.},
+month={08},
+journal={Psychological review},
+}
+
+@ARTICLE{WohldmannHealyBourne10,
+month={May},
+year={2010},
+author={Wohldmann, Erica L and Healy, Alice F and Bourne, Lyle E},
+journal={Attention, perception \& psychophysics},
+volume={72},
+pages={},
+url={http://www.ncbi.nlm.nih.gov/pubmed/20436206},
+title={Task integration in time production.},
+}
+    </textarea>
+    </div>
+  <div class="bsteditordiv">
+    <h2>.bbl</h2>
+    <textarea class="bsteditor" id="bbl">
+The .bbl file will appear here.
+    </textarea>
+  </div>
+
+
+</div>
+
+
+
+
+  </body>
+
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script src="../release/bibtex-webworker.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+  <script src="../release/bibtex.js"></script>
+  <script src="texlive.js"></script>
+  <script src="main.js"></script>
+</html>

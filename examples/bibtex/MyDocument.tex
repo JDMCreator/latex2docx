@@ -1,0 +1,54 @@
+% The preamble of a document begins at \documentclass{...} and ends at \begin{...} and includes commands that affect all the document.
+
+% Defines the type of document = article :
+
+%\documentclass[14pt]{extarticle}       % To use other font sizes: 8pt, 9pt, 10pt, 11pt, 12pt, 14pt, 17pt, and 20pt. The package extsizes is included in MiKTeX.
+
+\documentclass[12pt]{article}              % Article with 12pt text. 
+
+\usepackage[T1]{fontenc}                  % ''Standard package for selecting font encodings''. 
+
+\usepackage[utf8]{inputenc}               % ''Trans­lates var­i­ous stan­dard and other in­put en­cod­ings into a ‘LaTeX in­ter­nal lan­guage. ''
+
+%\usepackage{lmodern}                    % Uses the font Latin Modern. The standard LaTeX font is Computer Modern.
+
+%\usepackage {hyperref} 		          % ''Han­dles cross-ref­er­enc­ing com­mands in LaTeX to pro­duce hy­per­text links in the doc­u­ment.'' Supports hyperlinks and displays rectangles around the cited references.
+
+\usepackage[pdfborder={0 0 0}]{hyperref}    % Eliminates these rectangles.
+\hypersetup{pdfborder=0 0 0}
+
+\usepackage {breakurl} 
+
+%\usepackage[cyr]{aeguill}               % Poly: To use French quotes.
+
+\usepackage[english]{babel}             % Support for English and French. 
+
+\usepackage[numbers]{natbib}          % Use of the natbib package for citations and bibliography.
+
+\usepackage{IEEEtrantools}               % To be able to use the command bstctlcite, which displays et al. for 3 authors and more. 
+
+%\date{}                                        % Does not display the compilation date after the title.
+
+% An environment starts at \begin{...} and finishes at \end{...}.
+
+\begin{document}
+
+\bstctlcite{A:BSTcontrol}                  % To display et al. for more than 3 authors.
+
+\title{My Document}
+\maketitle
+
+In this document, we cite a printed book~\cite{Boyce2002}, a printed book, 7th edition~\cite{Brydson1999}, an edited printed book, 2nd edition~\cite{Fraas2010}, an electronic book~\cite{Manasreh2011}, an edited electronic book, 3rd edition~\cite{Chen2009}, a section without title of an electronic book~\cite{Kizza2013}, a chapter in an edited electronic book~\cite{Haist2014}, an entry without author in an edited electronic encyclopedia~\cite{Daintith2010}, a Wikipedia entry with last update date~\cite{Corrosion2015}, a journal article in print~\cite{Kaliouby1987}, an electronic journal article~\cite{Senjian2015}, an accepted article that is already available online~\cite{Choy2016}, two submitted articles that were not yet accepted~\cite{Choy2015} and~\cite{Choy2015a}, the whole issue of a journal~\cite{IEEE2012}, an electronic periodical article~\cite{Gervais2013}, an electronic periodical article without author~\cite{Ledevoir2013}, a conference paper~\cite{Madani2010}, a Master's thesis~\cite{Massicotte2013}, a PhD thesis~\cite{Rossi2011}, a technical repport in print~\cite{DeSantis2002}, a technical repport available online~\cite{Cohen2006}, a Canadian patent~\cite{Thorsson2014}, an American patent~\cite{Schirmer2012}, an American patent application~\cite{Sakai2015}, a printed standard~\cite{CSA2002}, an electronic standard~\cite{Electrical2006}, a web page~\cite{Ordre2015}, software~\cite{Druide2012}, and a personal communication~\cite{Com2015}. \\
+We can also mention \url{http://www.latex-tables.com/index.php?id=5} multiple sources for the same idea~\cite{Kaliouby1987,Thorsson2014,Sakai2015}. % ~ is a nonbreak space.
+
+\bibliographystyle{ieeetran}         % The bibliography style is ieeetran in English.
+
+%\bibliography{IEEEabrv,MyReferences}        % Produces the bibliography with abbreviated titles of IEEE journals.
+
+%\bibliography{IEEEfull,MyReferences}       % Produces the bibliography with full titles of IEEE journals.
+
+\bibliography{IEEEabrv,MyIEEEabrvconf,MyReferences}     % Uses the IEEE abbreviations of journals and my file with abbreviations of IEEE conferences.
+
+%\nocite{*}                                       % Displays all the references in the MyReferences.bib file, whether they were cited in the text or not.
+
+\end{document}

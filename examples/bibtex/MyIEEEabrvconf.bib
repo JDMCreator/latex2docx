@@ -1,0 +1,113 @@
+
+IEEEabrv.bib
+V1.13 (2008/09/30)
+Copyright (c) 2002-2008 by Michael Shell
+See: http://www.michaelshell.org/
+for current contact information.
+
+BibTeX bibliography string definitions of the ABBREVIATED titles of
+IEEE journals and magazines and online publications.
+
+This file is designed for bibliography styles that require 
+abbreviated titles and is not for use in bibliographies that
+require full-length titles.
+
+Support sites:
+http://www.michaelshell.org/tex/ieeetran/
+http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+and/or
+http://www.ieee.org/
+
+Special thanks to Laura Hyslop and ken Rawson of IEEE for their help
+in obtaining the information needed to compile this file. Also,
+Volker Kuhlmann and Moritz Borgmann kindly provided some corrections
+and additions.
+
+*************************************************************************
+Legal Notice:
+This code is offered as-is without any warranty either expressed or
+implied; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE! 
+User assumes all risk.
+In no event shall IEEE or any contributor to this code be liable for
+any damages or losses, including, but not limited to, incidental,
+consequential, or any other damages, resulting from the use or misuse
+of any information contained here.
+
+All comments are the opinions of their respective authors and are not
+necessarily endorsed by the IEEE.
+
+This work is distributed under the LaTeX Project Public License (LPPL)
+( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+distributed and modified. A copy of the LPPL, version 1.3, is included
+in the base LaTeX documentation of all distributions of LaTeX released
+2003/12/01 or later.
+Retain all contribution notices and credits.
+** Modified files should be clearly indicated as such, including  **
+** renaming them and changing author support contact information. **
+
+File list of work: IEEEabrv.bib, IEEEfull.bib, IEEEexample.bib,
+                   IEEEtran.bst, IEEEtranS.bst, IEEEtranSA.bst,
+                   IEEEtranN.bst, IEEEtranSN.bst, IEEEtran_bst_HOWTO.pdf
+*************************************************************************
+
+
+USAGE:
+
+\bibliographystyle{mybstfile}
+\bibliography{IEEEabrv,mybibfile}
+
+where the IEEE titles in the .bib database entries use the strings
+defined here. e.g.,
+
+
+   journal = IEEE_J_AC,
+
+
+to yield "{IEEE} Trans. Automat. Contr."
+
+
+IEEE uses abbreviated journal titles in their bibliographies -
+this file is suitable for work that is to be submitted to the IEEE.
+
+
+For work that requires full-length titles, you should use the full
+titles provided in the companion file, IEEEfull.bib.
+
+
+** NOTES **
+
+ 1. Journals have been grouped according to subject in order to make it
+    easier to locate and extract the definitions for related journals - 
+    as most works use references that are confined to a single topic.
+    Magazines are listed in straight alphabetical order.
+
+ 2. String names are closely based on IEEE's own internal acronyms.
+ 
+ 3. Abbreviations follow IEEE's style.
+
+ 4. Older, out-of-print IEEE titles are included (but not including titles
+    dating prior to IEEE's formation from the IRE and AIEE in 1963).
+
+ 5. The following string definitions have been disabled because their
+    abbreviations have not yet been verified:
+    
+    STRING{IEEE_J_LT         = "{IEEE} Trans. Learning Technol."}
+    STRING{IEEE_J_NSM        = "{IEEE} Trans. Netw. Service Manag."}
+    STRING{IEEE_J_SC         = "{IEEE} Trans. Services Comput."}
+    STRING{IEEE_J_STARS      = "{IEEE} J. Sel. Topics Appl. Earth Observations Remote Sens."}
+    
+
+    If you know what the proper abbreviation is for a string above,
+    email me and I will correct them in the next release.
+
+
+
+
+
+IEEE Conferences
+
+@STRING{TREMBLAY_CSMR          = "14th European Conf. Softw. Maintenance Reeng. ({CSMR})"}
+
+--
+EOF

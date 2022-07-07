@@ -1,0 +1,411 @@
+% 10.11.2015
+
+% To change the IEEEtran.bst controls, users should create an IEEEtranBSTCTL entry in their .bib file:
+
+%@IEEEtranBSTCTL{References:BSTcontrol,      
+%CTLuse_forced_etal= "yes",     % To display et al. for 3 and more authors.
+%CTLmax_names_forced_etal = "2",
+%CTLnames_show_etal= "1",
+%CTLuse_alt_spacing= "no",     % ''Shuts off the alternate interword spacing for entries with URLs''.
+%CTLalt_stretch_factor= "1"     % ''If alternate interword spacing for entries  with URLs is enabled, this is the interword spacing stretch factor that will be used.''
+%}     
+
+
+@IEEEtranBSTCTL{A:BSTcontrol,
+CTLuse_forced_etal       = "yes",
+CTLmax_names_forced_etal = "3",
+CTLuse_alt_spacing= "no",
+CTLnames_show_etal       = "1" 
+}
+
+%At present, the DOI is not supported by the IEEEtran style, but it will probably be in the future. If your document has a DOI, include it in the reference. 
+%In the examples below, the DOI field was added in all the references that have a DOI.
+
+%Printed book, 7th edition
+
+@book{Brydson1999,
+author = {Brydson, J. A.},
+title = {Plastics materials},
+year = {1999},
+publisher = {Butterworth-Heinemann},
+address = {Oxford, UK},
+edition = {Seventh}
+}
+
+
+%Printed book
+
+@book{Boyce2002,
+author = {Boyce, William E. and DiPrima, Richard Clyde},
+title = {Équations différentielles},
+year = {2002},
+publisher = {Chenelière},
+address = {Montréal, QC}
+}
+
+
+%Edited printed book, 2nd edition
+
+@book{Fraas2010,
+editor = {Fraas, Lewis M. and Partain, Larry D.},
+title = {Solar Cells and Their Applications},
+year = {2010},
+publisher = {Wiley},
+address = {Hoboken, NJ},
+edition = {Second}
+}
+
+
+%Electronic book
+
+@book{Manasreh2011,
+author = {Manasreh, Omar},
+title = {Introduction to Nanomaterials and Devices},
+year = {2011},
+publisher = {Wiley},
+address = {Hoboken, NJ},
+doi = {10.1002/9781118148419},
+url = {http://onlinelibrary.wiley.com/book/10.1002/9781118148419}
+}
+
+
+%Edited electronic book, 3rd edition
+
+@book{Chen2009,
+editor = {Chen, Wai-Kai},
+title = {Analog and {VLSI} Circuits: The Circuits and Filters Handbook},
+year = {2009},
+publisher = {{CRC} Press},
+address = {Boca Raton, FL},
+edition = {Third},
+url = {http://www.crcnetbase.com/doi/book/10.1201/9781420058925}
+}
+
+
+%Section without title of an electronic book (some pages in a book)
+
+@inbook{Kizza2013,
+author = {Kizza, Joseph Migga},
+title = {Guide to Computer Network Security},
+year = {2013},
+publisher = {Springer},
+address = {London, UK},
+edition = {Second},
+pages = {119-120},
+doi = {10.1007/978-1-4471-4543-1},
+url = {http://dx.doi.org/10.1007/978-1-4471-4543-1}
+}
+
+
+%Chapter in an edited electronic book
+
+@incollection{Haist2014,
+author = {Haist, Tobias and Hasler, Malte and Osten, Wolfang and Baranek, Michal},
+title = {Programmable microscopy},
+booktitle = {Multi-dimensional Imaging},
+editor = {Javidi, Bahram and Tajahuerce, Enrique and Andrés, Pedro},
+year = {2014},
+publisher = {{IEEE} Press-Wiley},
+address = {Chichester, UK},
+pages = {153-173},
+doi = {10.1002/9781118705766},
+url = {http://ieeexplore.ieee.org/xpl/bkabstractplus.jsp?bkn=6798070}
+}
+
+
+%Entry in an encyclopedia
+
+@incollection{Daintith2010,
+editor = {Daintith, John and Martin, Elizabeth},
+title = {Lanthanoids},
+booktitle = {A Dictionary of Science},
+year = {2010},
+publisher = {Oxford University Press},
+address = {Oxford, UK},
+edition = {Sixth},
+pages = {460},
+url = {http://www.knovel.com/ web/portal/browse/display?_EXT_KNOVEL_DISPLAY_bookid=3287}
+}
+
+
+%Entry in Wikipédia with last update date
+
+@incollection{Corrosion2015,
+title = {Corrosion},
+booktitle = {Wikipedia},
+year = {2015},
+month = {Aug. 14,},
+url = {https://en.wikipedia.org/wiki/Corrosion}
+}
+
+
+%Published journal article (in print)
+
+@article{Kaliouby1987,
+title = {New two-port scattering matrix measurement technique using a sliding load},
+author = {Kaliouby, Leopoldine and Bosisio, Renato G.},
+journal = IEEE_J_IM,
+year = {1987},
+volume = {IM-36},
+number = {4},
+pages = {1028-1030},
+month = dec
+}
+
+
+%Published journal article (in electronic format)
+
+@article{Senjian2015,
+author = {Senjian, An and Boussaid, Farid and Bennamoun, Mohammed and Sohel, Ferdous},
+title = {Quantitative error analysis of bilateral filtering},
+journal = IEEE_J_SPL,
+year = {2015},
+volume = {22},
+number = {2},
+pages = {202-206},
+month = sep,
+doi = {10.1109/LSP.2014.2353694},
+url = {http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6892949}
+}
+
+
+%Journal article to be published, already available online
+
+@article{Choy2016,
+author = {Choy, Wallace C. H. and Ren, Xingang},
+title = {Plasmon-electrical effects on organic solar cells by incorporation of metal nanostructures},
+journal = IEEE_J_JSTQE,
+year = {2016},
+volume = {22},
+number = {1},
+pages = {1-9},
+month = jan,
+url = {http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7119560},
+note = {to be published}
+}
+
+
+%Submitted article that was not yet accepted
+
+@article{Choy2015,
+author = {Choy, Wallace C. H. and Ren, Xingang},
+title = {Plasmon-electrical effects on organic solar cells by incorporation of metal nanostructures},
+journal = IEEE_J_JSTQE,
+year = {2015},
+month = sept,
+note = {submitted for publication}
+}
+
+
+%Submitted article that was not yet accepted
+
+@unpublished{Choy2015a,
+author = {Choy, Wallace C. H. and Ren, Xingang},
+title = {Plasmon-electrical effects on organic solar cells by incorporation of metal nanostructures},
+year = {2015},
+note = {submitted for publication}
+}
+
+
+%The whole issue of a journal (in electronic format)
+
+@periodical{IEEE2012,
+title = IEEE_J_AP,
+year = {2012},
+volume = {60},
+number = {4},
+month = apr,
+url = {http://ieeexplore.ieee.org/xpl/tocresult.jsp?isnumber=6178353&punumber=8}
+}
+
+
+%Periodical article available online
+
+@article{Gervais2013,
+title = {Plagiat: Quel vilain mot!},
+author = {Gervais, Martine},
+journal = {Plan},
+year = {2013},
+volume = {L},
+number = {2},
+pages = {46-47},
+month = mar,
+url = {http://www.oiq.qc.ca/Documents/DCAP/chroniques_PLAN/ethique_deontologie/2013_ethique_deontologie/2013_eth_deonto_PLAN_03_FR.pdf}
+}
+
+
+%Periodical article without author, available online
+
+@misc{Ledevoir2013,
+howpublished = {Le Devoir},
+title = {Des satellites canadiens s'élancent de l'{I}nde},
+year = {2013},
+month = {Feb. 25,},
+url = {http://www.ledevoir.com/societe/science-et-technologie/371795/des-satellites-canadiens-s-elancent-de-l-inde}
+}
+
+
+%Conference paper in electronic format
+
+@inproceedings{Madani2010,
+author = {Madani, Nioosha and Guerrouj, Latifa and Di Penta, Massimiliano and Guéhéneuc, Yann-Gaël and Antoniol, Giuliano},
+title = {Recognizing words from source code identifiers using speech recognition techniques},
+booktitle = TREMBLAY_CSMR,
+year = {2010},
+address = {Madrid, Spain},
+month = {Mar. 15-18,},
+intype = {presented at the},
+pages = {68-77},
+doi = {10.1109/CSMR.2010.31},
+url = {http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5714421}
+}
+
+
+%Master's thesis in electronic format
+
+@mastersthesis{Massicotte2013,
+author = {Massicotte, Geneviève},
+title = {Biocapteur ampérométrique intégré pour une unité de détection dédiée aux neurotransmetteurs},
+school = {Dép. de génie électrique, École Polytechnique de Montréal}, 
+year = {2013},
+address = {Montréal, QC},
+type = {Master's thesis},
+url = {http://publications.polymtl.ca/1319/}
+}
+
+
+%PhD dissertation in electronic format
+
+@phdthesis{Rossi2011,
+author = {Rossi, Angelo},
+title = {Sécurité dans les réseaux mobiles de nouvelle génération},
+school = {Dép. de génie informatique et génie logiciel, École Polytechnique de Montréal},
+year = {2011},
+address = {Montréal, QC},
+type = {PhD dissertation},
+url = {http://publications.polymtl.ca/614/}
+}
+
+
+%Technical report (in print)
+
+@techreport{DeSantis2002,
+author = {De Santis, Romano Mario},
+title = {Enhanced tuning of industrial controllers via a dual loop {pid} form},
+institution = {Dép. de genie électrique, École Polytechnique de Montréal},
+year = {2002},
+address = {Montréal, QC},
+number = {EPM/RT 01-06},
+type = {Technical report}
+}
+ 
+ 
+%Technical report (in electronic format)
+
+@techreport{Cohen2006,
+author = {Cohen, Amit and Thorne, David},
+title = {Migration to {E}thernet-based {DSL} aggregation},
+institution = {Architecture and Transport Working Group},
+year = {2006},
+number = {DSL Forum TR-101},
+url = {https://www.broadband-forum.org/technical/download/TR-101.pdf}
+}
+
+
+%Canadian patent (in print or electronic format)
+
+@patent{Thorsson2014,
+author = {Thorsson, Brynjolfur and Thorvaldsson, Bjorn and Asgeirsson, Asgeir}, 
+title = {Tracing items through a non-sequential process},
+nationality = {Canadian},
+number = {2 634 408},
+year = {2014},
+month = {May 13},
+yearfiled = {2006},
+url = {http://brevets-patents.ic.gc.ca/opic-cipo/cpd/eng/patent/2634408/summary.html},
+howpublished = {Canadian Intellectual Property Office}
+}
+
+
+%American patent (in print or electronic format)
+
+@patent{Schirmer2012,
+author = {Schirmer, Andreas and Rude, Mathew and Brubaker, Shane},
+title = {Method for producing a fatty alcohol or fatty aldehyde},
+nationality = {U.S.},
+number = {8 268 599 B2},
+year = {2012},
+month = {Sept. 18},
+url = {http://www.google.com/patents/US8268599?dq=8,268,599&hl=fr&sa=X&ei=uI_UUJGGEMXNrQGR0oDADw&ved=0CDsQ6AEwAA}
+}
+
+
+%American patent application (in print or electronic format)
+
+@patent{Sakai2015,
+author = {Sakai, Takashi and Kosaka, Shunsuke and Kunisaki, Akira},
+title = {Industrial robot},
+nationality = {U.S.},
+number = {2015/0246449 A1},
+year = {2015},
+month = {Sept. 3},
+type = {Patent appl.},
+url = {http://appft.uspto.gov/netacgi/nph-Parser?TERM1=20150246449&Sect1=PTO1&Sect2=HITOFF&d=PG01&p=1&u=\%2Fnetahtml\%2FPTO\%2Fsrchnum.html&r=0&f=S&l=50}
+}
+
+%Change & with \& if the link changes in comment.
+ 
+ 
+%Standard in print
+
+@standard{CSA2002,
+title = {ISO 14001 and Compliance in {C}anada},
+number = {CSA PLUS 1162},
+address = {Toronto, ON},
+year = {2002}
+}
+
+
+%Standard in electronic format
+
+@standard{Electrical2006,
+title = {{IEEE} Recommended Practice for Powering and Grounding Electronic Equipment},
+number = {1100-2005},
+year = {2006},
+institution = {{IEEE}},
+address = {Piscataway, NJ},
+doi = {10.1109/IEEESTD.2006.216391},
+url = {http://ieeexplore.ieee.org/servlet/opac?punumber=10911}
+}
+
+
+%Web page
+
+@electronic{Ordre2015,
+author = {{Ordre des ingénieurs du Québec}},
+title = {Rapport annuel 2014 - 2015},
+year = {2015},
+url = {http://www.oiq.qc.ca/Documents/DCAP/Rapports_annuels/2014-2015/Rapport-annuel-2014-2015.pdf}
+}
+
+%Use {} for an organisation as author.
+
+
+%Software
+
+@electronic{Druide2012,
+author = {{Druide informatique}},
+title = {Antidote {RX} (Version 8)},
+year = {2012},
+url = {http://www.druide.com/antidote.html}
+} 
+
+
+%Personal communication
+
+@misc{Com2015,
+author = {Desjardins, Laurent},
+year = {2015},
+month = {May 13,},
+note = {private communication}
+}

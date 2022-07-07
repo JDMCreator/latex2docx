@@ -1,0 +1,48 @@
+.mandiv {
+    width: 48%;
+    border: 1px solid;
+    margin-left: 2px;
+    padding-left: 2px;
+    float:left;
+    clear:both;
+}
+
+.outputdiv {
+    float:left;
+    width: 48%;
+    margin-left:2px;
+    font-family: Courier New, monospace;
+    white-space:pre;
+    border: 1px solid;
+    padding-left: 2px;
+    height: 20em;
+}
+
+.editordiv {
+  width: 100%;
+  margin-left:2px;
+  clear:both;
+}
+
+.auxeditordiv {
+    width: 20%;
+    float:left;
+}
+
+.auxeditor {
+    font-family: Courier New, monospace;
+    width: 100%;
+    height: 20em;
+}
+
+.bsteditordiv {
+    width: 20%;
+    float:left;
+    margin-left: 15px;
+}
+
+.bsteditor {
+    font-family: Courier New, monospace;
+    width: 100%;
+    height: 20em;
+}

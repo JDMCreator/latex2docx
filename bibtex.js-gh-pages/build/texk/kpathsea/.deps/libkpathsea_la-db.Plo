@@ -1,0 +1,207 @@
+libkpathsea_la-db.lo: ../../../src/texk/kpathsea/db.c \
+  ../../../src/texk/kpathsea/../kpathsea/config.h ../kpathsea/c-auto.h \
+  ../../../src/texk/kpathsea/../kpathsea/c-std.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/math.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/sys/reent.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/_ansi.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/newlib.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/sys/config.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/machine/ieeefp.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/sys/features.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/sys/_types.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/machine/_types.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/machine/_default_types.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/sys/lock.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/stddef.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/stdio.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/stdarg.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/sys/types.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/machine/types.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/stdint.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/sys/sched.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/sys/stdio.h \
+  ../../../src/texk/kpathsea/../kpathsea/c-unistd.h \
+  ../../../src/texk/kpathsea/../kpathsea/systypes.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/unistd.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/sys/unistd.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/stdlib.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/machine/stdlib.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/alloca.h \
+  ../../../src/texk/kpathsea/../kpathsea/c-memstr.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/string.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/sys/string.h \
+  ../../../src/texk/kpathsea/../kpathsea/c-errno.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/errno.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/sys/errno.h \
+  ../../../src/texk/kpathsea/../kpathsea/c-minmax.h \
+  ../../../src/texk/kpathsea/../kpathsea/c-limits.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/limits.h \
+  /var/www/bibtex.js/emscripten/system/include/bsd/float.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/sys/cdefs.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/assert.h \
+  ../../../src/texk/kpathsea/../kpathsea/c-proto.h \
+  ../../../src/texk/kpathsea/../kpathsea/debug.h \
+  ../../../src/texk/kpathsea/../kpathsea/types.h \
+  ../../../src/texk/kpathsea/../kpathsea/str-llist.h \
+  ../../../src/texk/kpathsea/../kpathsea/hash.h \
+  ../../../src/texk/kpathsea/../kpathsea/str-list.h \
+  ../../../src/texk/kpathsea/../kpathsea/lib.h \
+  ../../../src/texk/kpathsea/../kpathsea/progname.h \
+  ../../../src/texk/kpathsea/../kpathsea/absolute.h \
+  ../../../src/texk/kpathsea/../kpathsea/c-stat.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/sys/stat.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/time.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/machine/time.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/signal.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/sys/signal.h \
+  ../../../src/texk/kpathsea/../kpathsea/c-fopen.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/fcntl.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/sys/fcntl.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/sys/_default_fcntl.h \
+  ../../../src/texk/kpathsea/../kpathsea/c-pathch.h \
+  ../../../src/texk/kpathsea/../kpathsea/c-ctype.h \
+  /var/www/bibtex.js/emscripten/system/include/libc/ctype.h \
+  ../../../src/texk/kpathsea/../kpathsea/db.h \
+  ../../../src/texk/kpathsea/../kpathsea/line.h \
+  ../../../src/texk/kpathsea/../kpathsea/pathsearch.h \
+  ../../../src/texk/kpathsea/../kpathsea/readable.h \
+  ../../../src/texk/kpathsea/../kpathsea/tex-file.h \
+  ../../../src/texk/kpathsea/../kpathsea/variable.h
+
+../../../src/texk/kpathsea/../kpathsea/config.h:
+
+../kpathsea/c-auto.h:
+
+../../../src/texk/kpathsea/../kpathsea/c-std.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/math.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/sys/reent.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/_ansi.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/newlib.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/sys/config.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/machine/ieeefp.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/sys/features.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/sys/_types.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/machine/_types.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/machine/_default_types.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/sys/lock.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/stddef.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/stdio.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/stdarg.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/sys/types.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/machine/types.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/stdint.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/sys/sched.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/sys/stdio.h:
+
+../../../src/texk/kpathsea/../kpathsea/c-unistd.h:
+
+../../../src/texk/kpathsea/../kpathsea/systypes.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/unistd.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/sys/unistd.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/stdlib.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/machine/stdlib.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/alloca.h:
+
+../../../src/texk/kpathsea/../kpathsea/c-memstr.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/string.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/sys/string.h:
+
+../../../src/texk/kpathsea/../kpathsea/c-errno.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/errno.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/sys/errno.h:
+
+../../../src/texk/kpathsea/../kpathsea/c-minmax.h:
+
+../../../src/texk/kpathsea/../kpathsea/c-limits.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/limits.h:
+
+/var/www/bibtex.js/emscripten/system/include/bsd/float.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/sys/cdefs.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/assert.h:
+
+../../../src/texk/kpathsea/../kpathsea/c-proto.h:
+
+../../../src/texk/kpathsea/../kpathsea/debug.h:
+
+../../../src/texk/kpathsea/../kpathsea/types.h:
+
+../../../src/texk/kpathsea/../kpathsea/str-llist.h:
+
+../../../src/texk/kpathsea/../kpathsea/hash.h:
+
+../../../src/texk/kpathsea/../kpathsea/str-list.h:
+
+../../../src/texk/kpathsea/../kpathsea/lib.h:
+
+../../../src/texk/kpathsea/../kpathsea/progname.h:
+
+../../../src/texk/kpathsea/../kpathsea/absolute.h:
+
+../../../src/texk/kpathsea/../kpathsea/c-stat.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/sys/stat.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/time.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/machine/time.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/signal.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/sys/signal.h:
+
+../../../src/texk/kpathsea/../kpathsea/c-fopen.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/fcntl.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/sys/fcntl.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/sys/_default_fcntl.h:
+
+../../../src/texk/kpathsea/../kpathsea/c-pathch.h:
+
+../../../src/texk/kpathsea/../kpathsea/c-ctype.h:
+
+/var/www/bibtex.js/emscripten/system/include/libc/ctype.h:
+
+../../../src/texk/kpathsea/../kpathsea/db.h:
+
+../../../src/texk/kpathsea/../kpathsea/line.h:
+
+../../../src/texk/kpathsea/../kpathsea/pathsearch.h:
+
+../../../src/texk/kpathsea/../kpathsea/readable.h:
+
+../../../src/texk/kpathsea/../kpathsea/tex-file.h:
+
+../../../src/texk/kpathsea/../kpathsea/variable.h:

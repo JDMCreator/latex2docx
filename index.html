@@ -1,0 +1,124 @@
+<!doctype>
+<html>
+<head>
+	<script src="FileSaver.js"></script>
+	<script src="docx.js"></script>
+<link rel="stylesheet" type="text/css" href="js/tikzjax/fonts.css">
+	<script src="latex-table-import.js"></script>
+	<script src="xcolor.js"></script>
+	<script type="text/javascript">
+		// load Latex2Word
+		var script = document.createElement("script");
+		if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+			// Localhost. Avoid cache
+			script.src = "latex2word.js?anticache=" + Math.random()*1000000000
+		}
+		else{
+			script.src = "latex2word.js";
+		}
+		document.head.appendChild(script);
+	</script>
+	<script type="module">
+		import { Canvg } from "https://cdn.skypack.dev/canvg";
+		window.Canvg = Canvg;
+	</script>
+	<title>LaTeX to Word</title>
+	<meta name="description" content="Convert LaTeX documents to DOCX (Microsoft Word) document online. Free, no registration.">
+	<style media="all">
+		#directory, #canvas{
+			position:absolute;
+			top:-9999px;
+			left:-9999px;
+		}
+		#directory-button{
+			width:15em;
+			position:relative;
+			font-size:140%;
+			background:red;
+			padding:5px;
+			display:inline-block;
+			box-shadow: 5px 5px 15px 5px #000000;
+			transition:top;
+			margin-bottom:20px;
+		}
+		#directory-button:hover{
+			background:pink;
+		}
+		#directory-button:active{
+			top:1px;
+		}
+		.content{
+			text-align:center;
+		}
+		#download-link:not([href]){
+			display:none;
+		}
+		#select-files-container{
+			display:none;
+			text-align:left;
+		}
+		#select-files-container ul{
+			list-style:none;
+			padding:0;
+			margin:5px;
+		}
+		#select-files-button{
+			margin-left:auto;
+			margin-right:auto;
+		}
+		#log{
+			list-style:none;
+			text-align:left;
+			padding:0;
+			margin:0;
+			display:inline-block;
+		}
+		#log li:first-child{
+			border-top:1px solid black;
+		}
+		.log-container{
+			font-size:80%;
+			font-family:monospace;
+		}
+		#log li{
+			border-bottom:1px solid black;
+			padding:2px;
+		}
+	</style>
+</head>
+<body>
+<div class="content">
+<h1>Convert LATEX to DOCX</h1>
+<h2>Easily convert LaTeX documents to Microsoft Word</h2>
+
+<script type="text/javascript">
+if(!('webkitdirectory' in document.createElement('input'))){
+	document.write("<div>Your browser is not supported.</div>");
+}
+</script>
+
+<label for="directory" id="directory-button" tabindex="0">Select the Root Folder of your LaTeX document</label>
+	<input type="file" directory webkitdirectory multiple oninput="latex2word.startFile(event)" id="directory">
+<canvas id="canvas">
+</canvas>
+<div>
+<div id="select-files-container">
+Select your TeX file:
+<div id="select-files">
+</div>
+<button id="select-files-button">Confirm</button>
+</div>
+</div>
+<a download id="download-link">Download</a>
+<div class="log-container">
+<div>
+Log:
+</div>
+<ul id="log"></ul>
+</div>
+</div>
+</body>
+<script type="text/javascript" id="MathJax-script" defer
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+</html>

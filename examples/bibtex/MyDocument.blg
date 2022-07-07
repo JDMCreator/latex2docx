@@ -1,0 +1,70 @@
+This is BibTeX, Version 0.99d (TeX Live 2020/W32TeX)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: MyDocument.aux
+The style file: ieeetran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: IEEEabrv.bib
+Database file #2: MyIEEEabrvconf.bib
+Database file #3: MyReferences.bib
+You're missing a field name---line 11 of file MyReferences.bib
+ : 
+ : %CTLuse_forced_etal= "yes",     % To display et al. for 3 and more authors.
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--string name "sept" is undefined
+--line 389 of file MyReferences.bib
+-- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** IEEEtran BST control entry "A:BSTcontrol" detected.
+Warning--empty author in Daintith2010
+Warning--empty author in Corrosion2015
+Warning--missing institution in CSA2002
+
+Done.
+You've used 31 entries,
+            4024 wiz_defined-function locations,
+            1543 strings with 22791 characters,
+and the built_in function-call counts, 17172 in all, are:
+= -- 1413
+> -- 320
+< -- 133
++ -- 177
+- -- 53
+* -- 826
+:= -- 2867
+add.period$ -- 58
+call.type$ -- 31
+change.case$ -- 47
+chr.to.int$ -- 343
+cite$ -- 34
+duplicate$ -- 1282
+empty$ -- 1384
+format.name$ -- 60
+if$ -- 3827
+int.to.chr$ -- 0
+int.to.str$ -- 30
+missing$ -- 229
+newline$ -- 113
+num.names$ -- 30
+pop$ -- 527
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 4
+skip$ -- 1405
+stack$ -- 0
+substring$ -- 536
+swap$ -- 995
+text.length$ -- 22
+text.prefix$ -- 0
+top$ -- 6
+type$ -- 31
+warning$ -- 3
+while$ -- 57
+width$ -- 32
+write$ -- 296
+(There was 1 error message)
