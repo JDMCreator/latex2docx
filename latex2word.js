@@ -1299,6 +1299,10 @@ function concatAndResolveUrl(url, concat) {
 								newContext.set("alignment", docx.AlignmentType.CENTER);
 								this.pushParagraph();
 							}
+							if(env.name == "itemize" || env.name == "enumerate"){
+								this.actualContext = newContext;
+								newContext.set("bulletlevel", newContext.get("bulletlevel")+1);
+							}
 							else if(!this.unknownCommands[env.name]){
 								this.Log(`Unknow environment '${env.name}'. I continue...`);
 								this.unknownCommands[env.name] = true
@@ -1326,6 +1330,10 @@ function concatAndResolveUrl(url, concat) {
 							this.paragraph.heading = docx.HeadingLevel.HEADING_3;
 							this.paragraph.keepNext = true;
 							await this.readContext(com.args[0], new LatexContext(this.actualContext));
+						}
+						else if(name == "item"){
+							this.pushParagraph();
+							this.paragraph.bullet = {level:this.actualContext.get("bulletlevel")}
 						}
 						else if(name == "emph"){
 							var newContext = new LatexContext(context);
@@ -1858,6 +1866,7 @@ console.log(com.args[0]);
 			this.Global.set("marginparwidth", this.lengthToDXA("11pt"));
 			this.Global.set("leftmargin", this.lengthToDXA("1in")+this.lengthToDXA("62pt"));
 			this.Global.set("rightmargin", this.lengthToDXA("1in")+this.lengthToDXA("76pt"));
+			this.Global.set("bulletlevel", -1);
 
 			// Change to default margin
 			this.Global.set("leftmargin", this.lengthToDXA("1in"));
